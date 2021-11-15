@@ -1,0 +1,249 @@
+#include <iostream>
+using namespace std;
+#include <bits/stdc++.h>
+#include <math.h>
+//9/25/2021
+//Malik Dukes Calculator Program CS328
+//Language C++
+//
+//A.	Advance Calculator Program Assignment:  Using the previous simple calculator program you created go back and add the following features to it.
+/*1.	Include an exponent of a number feature
+2.	Include finding the cube root calculation feature
+3.	Include good comments to indicate each features.¬¬¬¬¬
+4.	Run and include at least 3 to 4 examples showing that the features work
+5.	Show these examples in your work
+6.	Include the whole calculator program
+*/
+class Calculator  //class
+{
+public:
+float x, y, z;
+double n;
+
+public:
+Calculator(); //constructor function
+ 
+float cuberoot(float z, float x, int y) ///Function to find cuberoot
+{
+
+  cout <<"What Number would ou like to find the cube root"<<endl; //Output
+  cin >> x;//input 
+   y =3;
+  z = pow(x, 1.0/y); //expression
+  cout <<"This result is "<< z <<"\n\n";//output
+
+    exit(1);
+}
+ 
+float exponent(float z, float x, int y)   //function to find exponent
+{
+
+  cout <<"What Number would ou like to find Power of: "<<endl;
+  cin >> x;
+  cout <<"Exponent:" << endl;
+  cin >> y;
+  z = pow(x, 1.0 * y); //expression
+  cout <<"This result is "<< z <<"\n\n";
+
+    exit(1);
+}
+float add(float x, float y, float z) //Addition Function and Defined
+{
+  float num1, num2, num3;  //variable declaration
+  num1 = x;
+  num2 = y;
+  num3 = z;
+   cout <<"Please Enter First Number " << endl;  //user entered data
+    cin >> num1;
+    cout <<"Please Enter Second Number " << num2 << endl;
+   cin >> num2; 
+           num3 = num1 + num2; //Addition Formula
+           cout << num1 <<" + " << num2 <<" = " << num3 << endl; //output
+exit(1);
+}
+float sub(float x, float y, float z)  //Subtraction Function and defined
+{
+   float num1, num2, num3;  //variable declaration
+  num1 = x;
+  num2 = y;
+  num3 = z;
+   cout <<"Please Enter First Number " << endl; //user entered data
+    cin >> num1;
+    cout <<"Please Enter Second Number " << num2 << endl;
+   cin >> num2; 
+           num3 = num1 - num2; //Subtraction Formula
+           cout << num1 <<" - " << num2 <<" = " << num3 << endl; //output
+            exit(1);
+           
+}
+float multiply(float x, float y, float z)// Multiplaction Function and Defined
+{
+  float num1, num2, num3;  //variable declaration
+  num1 = x;
+  num2 = y;
+  num3 = z;
+            cout <<"Please Enter First Number " << endl; //user entered data
+           cin >> x;
+           cout <<"Please Enter Second Number " << y << endl;
+           cin >> y; 
+           z = x * y; //Multiplaction Formula
+           cout << x <<" * " << y <<" = " << z << endl; //output
+            exit(1);
+        
+}
+float div(float x, float y, float z)//Divison Function and Defined
+{
+  float num1, num2, num3;  //variable declaration
+  num1 = x;
+  num2 = y;
+  num3 = z;
+            
+      cout <<"Please Enter First Number " << endl; //user entered data
+           cin >> x;
+           cout <<"Please Enter Second Number " << endl;
+           cin >> y; 
+           z = x / y;  //division formula
+           cout << x <<" / " << y <<" = " << z << endl;
+       exit(1);
+}
+
+~Calculator(); //Destructor Function
+};
+
+Calculator::Calculator() //Calculator Function Defined
+{
+int choice;  //Variable declaration
+float x;
+float y;
+float z;
+
+ while (1) 
+    {
+        cout<<"-----------------"<<endl;  //Display user picks choice
+        cout<<"Calculator"<<endl;
+        cout<<"-----------------"<<endl;
+        cout<<"Press 1 for Addition "<<endl;
+        cout<<"Press 2 for Subtraction "<<endl;
+        cout<<"Press 3 for Multiplication"<<endl;
+        cout<<"Press 4 for Divison"<<endl;
+        cout<<"Press 5 for Cuberoot"<<endl;
+        cout<<"Press 6 for Exponent"<<endl;
+        cout<<"Press 7 for to Quit "<<endl;
+        cout<<"Enter your choice : ";
+        cin>>choice;
+        switch(choice)  //switch statement called
+        {
+        case 1:
+                  add(x, y, z);  //addition function called
+                  
+            break;
+        case 2:
+                  sub(x, y, z); //subtractiuon function called
+            break;
+        case 3:
+                  multiply(x, y, z); //multiplaction function called
+            break;
+          case 4:
+                div(x, y, z);// Division Function Called
+            break;
+        case 5:
+              cuberoot(x, y, z);//Cuberoot function
+            break;
+
+         case 6:
+              exponent(x, y, z);//expo function
+            break;
+
+
+           case 7:
+              exit(1);//exit
+            break;
+        default:
+            cout<<"Wrong choice"<<endl;  //default
+     
+ }
+    }
+};
+Calculator::~Calculator() //destructor funtion
+{
+exit(1);
+}
+int main() 
+{
+
+Calculator();  //calls calculator
+
+return 0;
+}
+
+/* clang++-7 -pthread -std=c++17 -o main main.cpp
+ ./main
+-----------------
+Calculator
+-----------------
+Press 1 for Addition 
+Press 2 for Subtraction 
+Press 3 for Multiplication
+Press 4 for Divison
+Press 5 for Cuberoot
+Press 6 for Exponent
+Press 7 for to Quit 
+Enter your choice : 5
+What Number would ou like to find the cube root
+27
+This result is 3
+ clang++-7 -pthread -std=c++17 -o main main.cpp
+ ./main
+-----------------
+Calculator
+-----------------
+Press 1 for Addition 
+Press 2 for Subtraction 
+Press 3 for Multiplication
+Press 4 for Divison
+Press 5 for Cuberoot
+Press 6 for Exponent
+Press 7 for to Quit 
+Enter your choice : 6
+What Number would ou like to find Power of: 
+5
+Exponent:
+2
+This result is 25
+ clang++-7 -pthread -std=c++17 -o main main.cpp
+ ./main
+-----------------
+Calculator
+-----------------
+Press 1 for Addition 
+Press 2 for Subtraction 
+Press 3 for Multiplication
+Press 4 for Divison
+Press 5 for Cuberoot
+Press 6 for Exponent
+Press 7 for to Quit 
+Enter your choice : 5
+What Number would ou like to find the cube root
+500
+This result is 7.93701
+
+ clang++-7 -pthread -std=c++17 -o main main.cpp
+ ./main
+-----------------
+Calculator
+-----------------
+Press 1 for Addition 
+Press 2 for Subtraction 
+Press 3 for Multiplication
+Press 4 for Divison
+Press 5 for Cuberoot
+Press 6 for Exponent
+Press 7 for to Quit 
+Enter your choice : 4
+Please Enter First Number 
+22
+Please Enter Second Number 
+6
+22 / 6 = 3.66667
+
+*/
